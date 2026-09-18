@@ -1,0 +1,84 @@
+---
+layout: default
+---
+{% assign c = site.data.cities | where: "slug", page.slug | first %}{% assign n = site.data.cities | size %}
+{% capture faq1 %}{{ c.name }} scores {{ c.score }}/100 on our LiveScore (rank #{{ c.rank }} of {{ n }}). It stands out for {{ c.top3 }}. Main trade-offs: {{ c.cons_lower }}.{% endcapture %}
+{% capture faq2 %}A single person should budget roughly ${{ c.total_fmt }} per month including a central 1-bedroom rent of about ${{ c.rent_fmt }} (indicative estimate). Living outside the centre or sharing can cut this by 20–40%.{% endcapture %}
+{% capture faq3 %}{{ c.name }} scores {{ c.safety }}/100 for safety ({{ c.g.safety }}). As in any city, conditions vary by neighbourhood — check local crime maps before choosing where to rent.{% endcapture %}
+{% capture faq4 %}{{ c.name }} has a {{ c.climate_lower }} climate with an average annual temperature around {{ c.temp }}°C.{% endcapture %}
+{% capture faq5 %}Start with our <a href="../guides/relocation-checklist.html">90-day relocation checklist</a>, estimate costs with the <a href="../tools.html#moving">moving cost estimator</a>, then <a href="../get-quotes.html?to={{ c.name_enc }}">compare free quotes</a> from vetted movers and relocation specialists.{% endcapture %}
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"City","name":{{ c.name | jsonify }},"containedInPlace":{"@type":"Country","name":{{ c.country | jsonify }}},"geo":{"@type":"GeoCoordinates","latitude":{{ c.lat }},"longitude":{{ c.lon }}}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":{{ "Is " | append: c.name | append: " a good place to live?" | jsonify }},"acceptedAnswer":{"@type":"Answer","text":{{ faq1 | strip_html | jsonify }}}},
+{"@type":"Question","name":{{ "How much does it cost to live in " | append: c.name | append: "?" | jsonify }},"acceptedAnswer":{"@type":"Answer","text":{{ faq2 | strip_html | jsonify }}}},
+{"@type":"Question","name":{{ "Is " | append: c.name | append: " safe?" | jsonify }},"acceptedAnswer":{"@type":"Answer","text":{{ faq3 | strip_html | jsonify }}}},
+{"@type":"Question","name":{{ "What is the weather like in " | append: c.name | append: "?" | jsonify }},"acceptedAnswer":{"@type":"Answer","text":{{ faq4 | strip_html | jsonify }}}},
+{"@type":"Question","name":{{ "How do I move to " | append: c.name | append: "?" | jsonify }},"acceptedAnswer":{"@type":"Answer","text":{{ faq5 | strip_html | jsonify }}}}]}</script>
+<section class="page-hero" style="padding-bottom:0">
+  <div class="container">
+    {% include crumbs.html %}
+    <div class="city-art" data-sky="{{ c.slug }}" style="background:{{ c.grad }};height:260px;border-radius:24px;padding:28px"><span class="flag" aria-hidden="true" style="font-size:2.2rem;top:22px;left:26px">{{ c.flag }}</span><span class="rank" style="top:22px;right:22px">#{{ c.rank }} of {{ n }}</span>
+      <div style="position:relative;z-index:1"><h1 style="color:#fff;margin:0">Living in {{ c.name | escape }}</h1><p style="margin:6px 0 0;color:#fff;opacity:.92">{{ c.country | escape }} · {{ c.blurb | escape }}</p></div>
+    </div>
+    <div class="grid grid-4" style="margin:22px 0 32px">
+      <div class="card"><span class="small muted">LiveScore</span><div style="font-family:var(--display);font-size:2.4rem;font-weight:800;line-height:1.1">{{ c.score }}<span class="small muted">/100</span></div><span class="grade {{ c.g.score | slice: 0 | downcase }}">{{ c.g.score }}</span></div>
+      <div class="card"><span class="small muted">Monthly budget (single)</span><div style="font-family:var(--display);font-size:2rem;font-weight:800">~${{ c.total_fmt }}</div><span class="small muted">incl. ~${{ c.rent_fmt }} rent</span></div>
+      <div class="card"><span class="small muted">Climate</span><div style="font-family:var(--display);font-size:2rem;font-weight:800">{{ c.temp }}°C</div><span class="small muted">{{ c.climate }} · avg/yr</span></div>
+      <div class="card"><span class="small muted">Population (metro)</span><div style="font-family:var(--display);font-size:2rem;font-weight:800">{{ c.pop_label }}</div><span class="small muted">Internet ~{{ c.mbps }} Mbps</span></div>
+    </div>
+  </div>
+</section>
+<div class="container">{% include ad.html slot="header" %}</div>
+<section class="section-sm">
+  <div class="container layout-side">
+    <article>
+      <div class="flex" style="justify-content:space-between;margin-bottom:12px"><h2 style="margin:0">Report card</h2><button class="btn btn-ghost btn-sm" data-share>{% include icon-share.html %} Share</button></div>
+      <div class="card score-list">
+        {% for cat in site.data.categories %}{% assign k = cat[0] %}<div class="score-row"><span>{{ cat[1] }}</span><div class="bar{% if k == "afford" %} love{% endif %}"><i data-w="{{ c[k] }}"></i></div><b><span class="grade {{ c.g[k] | slice: 0 | downcase }}">{{ c.g[k] }}</span></b></div>{% endfor %}
+      </div>
+
+      <h2 style="margin-top:40px">Pros &amp; cons of living in {{ c.name | escape }}</h2>
+      <div class="grid grid-2">
+        <div class="card"><h3 style="color:var(--ok)">👍 Pros</h3><ul>{% for x in c.pros %}<li>{{ x | escape }}</li>{% endfor %}</ul></div>
+        <div class="card"><h3 style="color:var(--bad)">👎 Cons</h3><ul>{% for x in c.cons %}<li>{{ x | escape }}</li>{% endfor %}</ul></div>
+      </div>
+      {% if c.best_for.size > 0 %}<p style="margin-top:18px"><b>Best for:</b> {% for b in c.best_for %}<span class="chip" style="margin:4px 4px 0 0">{{ b }}</span>{% endfor %}</p>{% endif %}
+
+      <h2 style="margin-top:40px">Cost of living in {{ c.name | escape }}</h2>
+      <p class="muted">Indicative monthly budget for one person living centrally (USD). Cost index: <b>{{ c.cost }}</b> (New York = 100).</p>
+      <div class="table-wrap"><table><thead><tr><th>Category</th><th>Monthly</th><th style="width:45%">Share</th></tr></thead><tbody>
+        {% assign blabels = "Rent (1-bed, central)|Groceries &amp; dining|Transport|Utilities &amp; internet|Health &amp; insurance|Leisure &amp; other" | split: "|" %}{% for row in c.budget %}<tr><td>{{ blabels[forloop.index0] }}</td><td><b>${{ row[0] }}</b></td><td><div class="bar"><i data-w="{{ row[1] }}" style="width:{{ row[1] }}%"></i></div></td></tr>{% endfor %}
+        <tr><td><b>Total</b></td><td><b>${{ c.total_fmt }}</b></td><td class="small muted">Average net salary ≈ ${{ c.salary_fmt }}/mo</td></tr>
+      </tbody></table></div>
+      <div class="flex" style="margin-top:14px"><a class="btn btn-live btn-sm" href="../tools.html?to={{ c.slug }}#cost">Compare with my city →</a><a class="btn btn-ghost btn-sm" href="../tools.html?to={{ c.slug }}#moving">Estimate moving cost</a></div>
+
+      {% include ad.html slot="inContent" %}
+
+      <h2 style="margin-top:40px">Watch: living in {{ c.name | escape }}</h2>
+      <div class="card video-card" data-city-video="{{ c.slug }}" data-title="Living in {{ c.name | escape }}: what it's really like" data-q="living in {{ c.name | escape }} {{ c.country | escape }} pros and cons"></div>
+
+      <div style="margin-top:40px">{% capture lt %}Moving to {{ c.name }}? Get free quotes{% endcapture %}{% capture ls %}Compare vetted movers, local agents and relocation specialists for {{ c.name }}. Free, fast and no obligation.{% endcapture %}{% include lead-mini.html city=c.name slug=c.slug title=lt sub=ls %}</div>
+
+      <h2 style="margin-top:40px">Cities similar to {{ c.name | escape }}</h2>
+      <div class="grid grid-3">{% for sl in c.similar %}{% assign s = site.data.cities | where: "slug", sl | first %}<article class="card hover"><span class="small muted">{{ s.flag }} {{ s.country | escape }}</span><h3 style="margin:6px 0"><a href="{{ s.slug }}.html">{{ s.name | escape }}</a></h3><span class="score-pill">{{ s.score }}</span> <a class="small" style="position:relative;z-index:1" href="../compare.html?a={{ c.slug }}&b={{ s.slug }}">Compare →</a></article>{% endfor %}</div>
+
+      <h2 style="margin-top:40px">FAQ: living in {{ c.name | escape }}</h2>
+      <div class="faq">
+        <details><summary>Is {{ c.name | escape }} a good place to live?</summary><div>{{ faq1 }}</div></details>
+        <details><summary>How much does it cost to live in {{ c.name | escape }}?</summary><div>{{ faq2 }}</div></details>
+        <details><summary>Is {{ c.name | escape }} safe?</summary><div>{{ faq3 }}</div></details>
+        <details><summary>What is the weather like in {{ c.name | escape }}?</summary><div>{{ faq4 }}</div></details>
+        <details><summary>How do I move to {{ c.name | escape }}?</summary><div>{{ faq5 }}</div></details>
+      </div>
+      <p class="small muted" style="margin-top:18px">Figures are indicative estimates for comparison, last reviewed 2026. <a href="../methodology.html">How we score cities</a> · <a href="../contact.html?topic=correction&city={{ c.slug }}">Suggest a correction</a></p>
+    </article>
+    <aside>
+      <div class="sticky-side stack">
+        <div class="card" style="border:2px solid var(--love)"><h3>🚚 Moving to {{ c.name | escape }}?</h3><p class="small muted">Get up to 5 free quotes from licensed, insured movers.</p><a class="btn btn-primary btn-block" href="../get-quotes.html?need=movers&to={{ c.name_enc }}">Get free quotes</a></div>
+        {% include ad.html slot="sidebar" cls="sidebar" %}
+        <div class="card"><h3>Is it right for you?</h3><p class="small muted">See how {{ c.name | escape }} ranks for your priorities.</p><a class="btn btn-live btn-block" href="../match.html">Take the City Match quiz</a></div>
+        <div class="card small"><b>♥ Enjoying this guide?</b><p class="muted" style="margin:6px 0 10px">LoveToLive is reader-supported. Help us cover more cities.</p><a class="btn btn-ghost btn-sm" href="../support.html">Support us</a></div>
+      </div>
+    </aside>
+  </div>
+</section>

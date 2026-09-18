@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+{% if page.base_abs %}<base href="{{ site.baseurl }}/">{% endif %}
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>{% if page.path == "index.html" %}LoveToLive — Find where you'll love to live — then live well there.{% else %}{{ page.title | escape }} | LoveToLive{% endif %}</title>
+<meta name="description" content="{{ page.description | escape }}">
+<link rel="canonical" href="{{ site.site_url }}/{% unless page.path == "index.html" %}{{ page.path }}{% endunless %}">
+<meta name="theme-color" content="#e2475a">
+<meta property="og:type" content="{{ page.og_type | default: "website" }}">
+<meta property="og:site_name" content="LoveToLive.com">
+<meta property="og:title" content="{% if page.path == "index.html" %}LoveToLive — Find where you'll love to live — then live well there.{% else %}{{ page.title | escape }} | LoveToLive{% endif %}">
+<meta property="og:description" content="{{ page.description | escape }}">
+<meta property="og:url" content="{{ site.site_url }}/{% unless page.path == "index.html" %}{{ page.path }}{% endunless %}">
+<meta property="og:image" content="{{ site.site_url }}/assets/img/og-image.svg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@lovetolive">
+<link rel="icon" href="{{ page.root }}assets/img/favicon.svg" type="image/svg+xml">
+<link rel="manifest" href="{{ page.root }}manifest.webmanifest">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700;9..144,800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{{ page.root }}assets/css/styles.css">
+<script>try{var t=localStorage.getItem("ltl-theme");if(t)document.documentElement.dataset.theme=JSON.parse(t)}catch(e){}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"LoveToLive.com","url":"{{ site.site_url }}/","logo":"{{ site.site_url }}/assets/img/logo.svg"}</script>
+</head>
+<body data-root="{{ page.root }}"{% if page.no_popup %} data-no-popup{% endif %}>
+<a class="skip-link" href="#main">Skip to content</a>
+<div class="topbar">🏆 <a href="{{ page.root }}contest.html">Love Where You Live Awards</a> are open — share your city, win prizes. <a href="{{ page.root }}get-quotes.html">Moving soon? Get free quotes →</a></div>
+<header class="site-header">
+  <div class="container nav">
+    <a class="logo" href="{{ page.root }}index.html" aria-label="LoveToLive home"><svg class="logo-mark" viewBox="0 0 40 40" aria-hidden="true"><defs><linearGradient id="lg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#e2475a"/><stop offset=".6" stop-color="#ff7a59"/><stop offset="1" stop-color="#d99a1e"/></linearGradient></defs><rect width="40" height="40" rx="11" fill="url(#lg)"/><path d="M20 30.5 11.6 22.3a5.6 5.6 0 0 1 8.4-7.4 5.6 5.6 0 0 1 8.4 7.4z" fill="#fff"/><path d="M15.5 22.5 20 18.5l4.5 4v4h-9z" fill="#e2475a"/></svg><span>LoveTo<b>Live</b></span></a>
+    <ul class="nav-links"><li><a href="{{ page.root }}places.html"{% if page.path == "places.html" %} aria-current="page"{% endif %}>Best Places</a></li><li><a href="{{ page.root }}match.html"{% if page.path == "match.html" %} aria-current="page"{% endif %}>City Match Quiz</a></li><li><a href="{{ page.root }}compare.html"{% if page.path == "compare.html" %} aria-current="page"{% endif %}>Compare</a></li><li><a href="{{ page.root }}tools.html"{% if page.path == "tools.html" %} aria-current="page"{% endif %}>Tools</a></li><li><a href="{{ page.root }}guides.html"{% if page.path == "guides.html" %} aria-current="page"{% endif %}>Guides</a></li><li><a href="{{ page.root }}videos.html"{% if page.path == "videos.html" %} aria-current="page"{% endif %}>Videos</a></li><li><a href="{{ page.root }}contest.html"{% if page.path == "contest.html" %} aria-current="page"{% endif %}>Contest</a></li></ul>
+    <div class="nav-actions">
+      <button class="icon-btn" data-theme-toggle aria-label="Toggle dark mode"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg></button>
+      <a class="btn btn-primary btn-sm" href="{{ page.root }}get-quotes.html" style="display:none" id="hdr-cta">Get Free Quotes</a>
+      <button class="icon-btn menu-toggle" data-menu-toggle aria-controls="mobile-nav" aria-expanded="false" aria-label="Menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+    </div>
+  </div>
+  <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile"><a href="{{ page.root }}places.html">Best Places</a><a href="{{ page.root }}match.html">City Match Quiz</a><a href="{{ page.root }}compare.html">Compare</a><a href="{{ page.root }}tools.html">Tools</a><a href="{{ page.root }}guides.html">Guides</a><a href="{{ page.root }}videos.html">Videos</a><a href="{{ page.root }}contest.html">Contest</a><a href="{{ page.root }}support.html">Support Us</a><a class="btn btn-primary" href="{{ page.root }}get-quotes.html">Get Free Moving &amp; Home Quotes</a></nav>
+</header>
+<style>@media(min-width:640px){#hdr-cta{display:inline-flex!important}}</style>
+<main id="main">
+{{ content }}
+</main>
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a class="logo" href="{{ page.root }}index.html"><svg class="logo-mark" viewBox="0 0 40 40" aria-hidden="true"><defs><linearGradient id="lg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#e2475a"/><stop offset=".6" stop-color="#ff7a59"/><stop offset="1" stop-color="#d99a1e"/></linearGradient></defs><rect width="40" height="40" rx="11" fill="url(#lg)"/><path d="M20 30.5 11.6 22.3a5.6 5.6 0 0 1 8.4-7.4 5.6 5.6 0 0 1 8.4 7.4z" fill="#fff"/><path d="M15.5 22.5 20 18.5l4.5 4v4h-9z" fill="#e2475a"/></svg><span>LoveTo<b>Live</b></span></a>
+        <p style="margin-top:14px">Find where you'll love to live — then live well there. Honest city data, free relocation tools and trusted partners for your next chapter.</p>
+        <form class="newsletter" data-form="newsletter" aria-label="Newsletter signup">
+          <label class="sr-only" for="nl-email">Email</label>
+          <input id="nl-email" type="email" name="email" placeholder="Your email" required>
+          <input type="hidden" name="list" value="footer">
+          <button class="btn btn-primary" type="submit">Subscribe</button>
+        </form>
+        <p class="small" style="margin-top:8px;color:#9c928a">Weekly: the best places to live, deals &amp; relocation tips. Unsubscribe anytime.</p>
+        <div class="social">
+          <a data-social="instagram" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 7a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm0 8.2a3.2 3.2 0 1 1 0-6.4 3.2 3.2 0 0 1 0 6.4zM17.3 5.5a1.2 1.2 0 1 0 0 2.4 1.2 1.2 0 0 0 0-2.4zM21.9 7.1c-.1-1.6-.4-3-1.6-4.2S17.7 1.4 16 1.3C14.4 1.2 9.6 1.2 8 1.3c-1.6.1-3 .4-4.2 1.6S2.2 5.5 2.1 7.1C2 8.7 2 13.4 2.1 15c.1 1.6.4 3 1.6 4.2s2.6 1.5 4.2 1.6c1.6.1 6.4.1 8 0 1.6-.1 3-.4 4.2-1.6s1.5-2.6 1.6-4.2c.1-1.6.1-6.3.2-7.9z"/></svg></a><a data-social="tiktok" aria-label="TikTok"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M16.6 2h-3.4v13.4a2.9 2.9 0 1 1-2.1-2.8V9.1a6.4 6.4 0 1 0 5.5 6.3V8.9a8 8 0 0 0 4.4 1.4V6.9a4.6 4.6 0 0 1-4.4-4.9z"/></svg></a>
+          <a data-yt-channel href="{{ page.root }}videos.html" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M23 7.2a3 3 0 0 0-2.1-2.1C19 4.6 12 4.6 12 4.6s-7 0-8.9.5A3 3 0 0 0 1 7.2 31 31 0 0 0 .5 12a31 31 0 0 0 .5 4.8 3 3 0 0 0 2.1 2.1c1.9.5 8.9.5 8.9.5s7 0 8.9-.5a3 3 0 0 0 2.1-2.1 31 31 0 0 0 .5-4.8 31 31 0 0 0-.5-4.8zM9.8 15V9l5.7 3z"/></svg></a><a data-social="x" aria-label="X"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.8 2H21l-7 8 8.3 12h-6.5l-5.1-6.7L4.8 22H1.6l7.5-8.6L1.2 2h6.7l4.6 6.1zm-1.1 18h1.8L7.4 3.9H5.5z"/></svg></a>
+          <a data-social="facebook" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M14 8h3V4h-3a4 4 0 0 0-4 4v2H7v4h3v8h4v-8h3l1-4h-4V8.5c0-.3.2-.5.5-.5z"/></svg></a><a data-social="pinterest" aria-label="Pinterest"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-3.6 19.3c-.1-.8-.2-2 0-2.9l1.3-5.4s-.3-.7-.3-1.6c0-1.5.9-2.7 2-2.7.9 0 1.4.7 1.4 1.5 0 .9-.6 2.3-.9 3.6-.3 1.1.5 2 1.6 2 1.9 0 3.4-2 3.4-5 0-2.6-1.9-4.4-4.5-4.4-3.1 0-4.9 2.3-4.9 4.7 0 .9.4 1.9.8 2.5.1.1.1.2.1.3l-.3 1.2c0 .2-.2.3-.4.2-1.4-.7-2.2-2.7-2.2-4.3 0-3.5 2.5-6.7 7.3-6.7 3.8 0 6.8 2.7 6.8 6.4 0 3.8-2.4 6.9-5.8 6.9-1.1 0-2.2-.6-2.5-1.3l-.7 2.6c-.2 1-.9 2.2-1.4 2.9A10 10 0 1 0 12 2z"/></svg></a><a data-social="linkedin" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9.5h4V21H3zM9.5 9.5h3.8v1.6h.1c.5-1 1.8-2 3.8-2 4 0 4.8 2.6 4.8 6V21h-4v-5.1c0-1.2 0-2.8-1.7-2.8s-2 1.3-2 2.7V21h-4z"/></svg></a>
+        </div>
+      </div>
+      <div><h4>Explore</h4><ul>
+        <li><a href="{{ page.root }}places.html"{% if page.path == "places.html" %} aria-current="page"{% endif %}>Best Places to Live</a></li><li><a href="{{ page.root }}match.html"{% if page.path == "match.html" %} aria-current="page"{% endif %}>City Match Quiz</a></li>
+        <li><a href="{{ page.root }}compare.html"{% if page.path == "compare.html" %} aria-current="page"{% endif %}>Compare Cities</a></li><li><a href="{{ page.root }}places.html?tag=nomad">For Digital Nomads</a></li>
+        <li><a href="{{ page.root }}places.html?tag=retire">For Retirees</a></li><li><a href="{{ page.root }}places.html?tag=family">For Families</a></li></ul></div>
+      <div><h4>Tools</h4><ul>
+        <li><a href="{{ page.root }}tools.html#cost">Cost of Living Calculator</a></li><li><a href="{{ page.root }}tools.html#moving">Moving Cost Estimator</a></li>
+        <li><a href="{{ page.root }}tools.html#mortgage">Mortgage &amp; Affordability</a></li><li><a href="{{ page.root }}tools.html#balance">Live-Well Score</a></li>
+        <li><a href="{{ page.root }}get-quotes.html"{% if page.path == "get-quotes.html" %} aria-current="page"{% endif %}>Get Free Quotes</a></li><li><a href="{{ page.root }}guides/relocation-checklist.html">Relocation Checklist</a></li></ul></div>
+      <div><h4>Community</h4><ul>
+        <li><a href="{{ page.root }}guides.html"{% if page.path == "guides.html" %} aria-current="page"{% endif %}>Guides</a></li><li><a href="{{ page.root }}videos.html"{% if page.path == "videos.html" %} aria-current="page"{% endif %}>Videos</a></li>
+        <li><a href="{{ page.root }}contest.html"{% if page.path == "contest.html" %} aria-current="page"{% endif %}>Contest &amp; Prizes</a></li><li><a href="{{ page.root }}support.html"{% if page.path == "support.html" %} aria-current="page"{% endif %}>Support Us / Donate</a></li>
+        <li><a href="{{ page.root }}careers.html"{% if page.path == "careers.html" %} aria-current="page"{% endif %}>Careers &amp; Creators</a></li></ul></div>
+      <div><h4>Company</h4><ul>
+        <li><a href="{{ page.root }}about.html"{% if page.path == "about.html" %} aria-current="page"{% endif %}>About</a></li><li><a href="{{ page.root }}methodology.html"{% if page.path == "methodology.html" %} aria-current="page"{% endif %}>Methodology</a></li>
+        <li><a href="{{ page.root }}advertise.html"{% if page.path == "advertise.html" %} aria-current="page"{% endif %}>Advertise &amp; Partner</a></li><li><a href="{{ page.root }}contact.html"{% if page.path == "contact.html" %} aria-current="page"{% endif %}>Contact</a></li>
+        <li><a href="{{ page.root }}privacy.html"{% if page.path == "privacy.html" %} aria-current="page"{% endif %}>Privacy</a></li><li><a href="{{ page.root }}terms.html"{% if page.path == "terms.html" %} aria-current="page"{% endif %}>Terms</a></li><li><a href="{{ page.root }}disclosure.html"{% if page.path == "disclosure.html" %} aria-current="page"{% endif %}>Affiliate Disclosure</a></li></ul></div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span data-year>2026</span> LoveToLive.com. All rights reserved. City data is indicative — see <a href="{{ page.root }}methodology.html">methodology</a>.</span>
+      <span>Made with ♥ for people who love to live.</span>
+    </div>
+  </div>
+</footer>
+<div class="cookie" id="cookie" role="dialog" aria-label="Cookie consent">
+  <strong>We value your privacy</strong>
+  <p class="small" style="margin:6px 0 12px">We use cookies for analytics and to show ads that keep LoveToLive free. See our <a href="{{ page.root }}privacy.html">privacy policy</a>.</p>
+  <div class="flex"><button class="btn btn-primary btn-sm" data-consent="all">Accept all</button><button class="btn btn-ghost btn-sm" data-consent="essential">Essential only</button></div>
+</div>
+<div class="sticky-cta" id="sticky-cta" role="complementary">
+  <p>🚚 Moving soon? Compare free quotes in 60 seconds.</p>
+  <div class="flex" style="flex-wrap:nowrap"><a class="btn btn-primary btn-sm" href="{{ page.root }}get-quotes.html">Get quotes</a><button class="icon-btn" style="background:transparent;color:inherit;border-color:rgba(255,255,255,.25)" data-close-sticky aria-label="Dismiss"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg></button></div>
+</div>
+<div class="modal" id="magnet-modal" role="dialog" aria-modal="true" aria-labelledby="magnet-title">
+  <div class="modal-box">
+    <button class="icon-btn modal-close" data-close-modal aria-label="Close"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+    <div class="icon-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="8" width="18" height="4"/><path d="M5 12v9h14v-9M12 8v13M12 8S10 3 7.5 4 9 8 12 8zm0 0s2-5 4.5-4S15 8 12 8z"/></svg></div>
+    <h2 id="magnet-title" style="font-size:1.7rem">Free: The 90-Day Relocation Checklist</h2>
+    <p class="muted">A week-by-week plan for a stress-free move — plus our weekly "Best Places" email. Free forever.</p>
+    <form data-form="newsletter" class="stack">
+      <input type="hidden" name="list" value="lead-magnet-checklist">
+      <label class="sr-only" for="mg-email">Email</label>
+      <input id="mg-email" type="email" name="email" placeholder="you@email.com" required>
+      <select name="stage" aria-label="Where are you in your move?"><option value="">Where are you in your move?</option><option>Just dreaming</option><option>Moving within 6 months</option><option>Moving within 3 months</option><option>Moving this month</option></select>
+      <button class="btn btn-primary btn-block" type="submit">Send me the checklist</button>
+      <p class="form-note">No spam. Unsubscribe in one click.</p>
+    </form>
+    <div class="form-success"><h3>Check your inbox ✉️</h3><p>Or open it right now: <a href="{{ page.root }}guides/relocation-checklist.html">The 90-Day Relocation Checklist →</a></p></div>
+  </div>
+</div>
+<script src="{{ page.root }}assets/js/config.js"></script>
+<script src="{{ page.root }}assets/js/main.js"></script>
+{% for s in page.scripts %}<script src="{{ page.root }}assets/js/{{ s }}"></script>{% endfor %}
+</body>
+</html>

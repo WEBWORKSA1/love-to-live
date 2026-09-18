@@ -1,0 +1,19 @@
+---
+layout: default
+---
+<section class="page-hero"><div class="container">{% include crumbs.html %}<span class="eyebrow">{{ page.cat }} · {{ page.mins }} min read</span><h1 style="max-width:900px">{{ page.title | escape }}</h1><p class="lead">{{ page.description | escape }}</p>
+<div class="byline"><span class="avatar">LL</span><span>By the <b>LoveToLive Editorial Team</b> · Updated {{ site.time | date: "%B %Y" }}</span><button class="btn btn-ghost btn-sm" data-share>Share</button></div></div></section>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":{{ page.title | jsonify }},"description":{{ page.description | jsonify }},"datePublished":"2026-09-18","dateModified":"{{ site.time | date: "%Y-%m-%d" }}","author":{"@type":"Organization","name":"LoveToLive Editorial Team"},"publisher":{"@type":"Organization","name":"LoveToLive.com"},"mainEntityOfPage":"{{ site.site_url }}/{{ page.path }}"}</script>
+<section class="section-sm"><div class="container layout-side">
+  <article class="prose">{{ content }}
+    <div style="margin-top:36px">{% include lead-mini.html %}</div>
+    <h2>Keep reading</h2>
+    <div class="grid grid-3" style="font-size:1rem">{% for r in page.related %}<article class="card hover"><span class="sponsored-tag" style="color:var(--live)">{{ r[2] }}</span><h3 style="font-size:1.05rem;margin-top:6px"><a href="{{ r[0] }}.html">{{ r[1] | escape }}</a></h3></article>{% endfor %}</div>
+  </article>
+  <aside><div class="sticky-side stack">
+    <nav class="card toc" aria-label="On this page"><b>On this page</b><ol style="margin-top:10px">{% for t in page.toc %}<li><a href="#{{ t[0] }}">{{ t[1] }}</a></li>{% endfor %}</ol></nav>
+    {% include ad.html slot="sidebar" cls="sidebar" %}
+    <div class="card"><h3>Free checklist</h3><p class="small muted">Get the 90-day relocation checklist + weekly tips.</p><button class="btn btn-primary btn-block" data-open-modal="magnet-modal">Send it to me</button></div>
+  </div></aside>
+</div></section>
+{% if page.checklist %}<script>(function(){var K="ltl-checklist";var s={};try{s=JSON.parse(localStorage.getItem(K)||"{}")}catch(e){}var boxes=document.querySelectorAll(".checklist input");boxes.forEach(function(b,i){b.id="cl"+i;b.checked=!!s[i];b.addEventListener("change",function(){s[i]=b.checked;try{localStorage.setItem(K,JSON.stringify(s))}catch(e){}})});var r=document.getElementById("cl-reset");r&&r.addEventListener("click",function(){s={};boxes.forEach(function(b){b.checked=false});try{localStorage.removeItem(K)}catch(e){}})})();</script>{% endif %}
