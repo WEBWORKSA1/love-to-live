@@ -1,0 +1,25 @@
+---
+layout: "default"
+title: "Contact Us"
+description: "Contact LoveToLive: questions, city requests, corrections, partnerships, press and privacy requests."
+root: ""
+crumbs: [["Home","index.html"],["Contact","contact.html"]]
+---
+<section class="page-hero"><div class="container">{% include crumbs.html %}<h1>Contact us</h1><p class="lead">Questions, city requests, corrections or partnership ideas — we read everything.</p></div></section>
+<section class="section-sm"><div class="container layout-side">
+  <div>
+    <form class="card form-grid two" data-form="contact" id="contact-form">
+      <div class="field"><label for="co-name">Name *</label><input id="co-name" name="name" required></div>
+      <div class="field"><label for="co-email">Email *</label><input id="co-email" name="email" type="email" required></div>
+      <div class="field full"><label for="co-topic">Topic</label><select id="co-topic" name="topic"><option value="general">General question</option><option value="city-request">Request a city</option><option value="correction">Data correction</option><option value="partnership">Partnership / advertising</option><option value="donation">Donations &amp; support</option><option value="press">Press</option><option value="privacy">Privacy request</option></select></div>
+      <div class="field full"><label for="co-msg">Message *</label><textarea id="co-msg" name="message" required></textarea></div>
+      <button class="btn btn-primary full" type="submit">Send message</button>
+    </form>
+    <div class="form-success"><h3>Message sent ✉️</h3><p>Thanks! We usually reply within 2 business days.</p></div>
+  </div>
+  <aside class="stack">
+    <div class="card"><h3>Email</h3><p class="muted small">Prefer email? Write to <a id="contact-email" href="mailto:hello@lovetolive.com">hello@lovetolive.com</a></p></div>
+    <div class="card"><h3>Moving soon?</h3><p class="muted small">For quotes, the fastest route is our quote form.</p><a class="btn btn-primary btn-sm" href="get-quotes.html">Get free quotes</a></div>
+  </aside>
+</div></section>
+<script>(function(){var q=new URLSearchParams(location.search);var t=q.get("topic");if(t){var s=document.getElementById("co-topic");if(s)s.value=t;}var c=q.get("city");if(c){var m=document.getElementById("co-msg");if(m)m.value=(t==="city-request"?"Please add: ":"Regarding: ")+c+"\n";}var e=(window.LTL_CONFIG||{}).contactEmail;if(e){var a=document.getElementById("contact-email");a.href="mailto:"+e;a.textContent=e;}})();</script>
