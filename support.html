@@ -1,0 +1,53 @@
+---
+layout: "default"
+title: "Support LoveToLive — Donate & Become a Member"
+description: "Support independent, free relocation and quality-of-life resources. One-time or monthly contributions fund data, local creators, community prizes and new city guides."
+root: ""
+scripts: ["donate.js"]
+crumbs: [["Home","index.html"],["Support us","support.html"]]
+---
+<section class="page-hero"><div class="container">{% include crumbs.html %}<span class="eyebrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19.5 12.6 12 20l-7.5-7.4A5 5 0 1 1 12 6a5 5 0 1 1 7.5 6.6z"/></svg> Reader-supported</span><h1>Help more people find a place they love</h1><p class="lead">LoveToLive is free for everyone. Your support pays for honest data, local city creators, community prizes and new guides — with no paywall.</p></div></section>
+<section class="section-sm"><div class="container lead-shell">
+  <div class="lead-form">
+    <div class="seg" role="tablist" aria-label="Frequency" style="margin-bottom:18px"><button class="active" data-freq="monthly" type="button">Monthly</button><button data-freq="once" type="button">One-time</button></div>
+    <h2 style="font-size:1.6rem">Choose an amount</h2>
+    <div class="amounts" role="group" aria-label="Amount"><button type="button" data-amt="5">$5</button><button type="button" data-amt="10">$10</button><button type="button" data-amt="25" class="active">$25</button><button type="button" data-amt="50">$50</button><button type="button" data-amt="100">$100</button><button type="button" data-amt="250">$250</button><button type="button" data-amt="500">$500</button><button type="button" data-amt="custom">Other</button></div>
+    <div class="field" id="custom-wrap" hidden style="margin-top:12px"><label for="custom-amt">Custom amount (USD)</label><input id="custom-amt" type="number" min="1" step="1" placeholder="e.g. 40"></div>
+    <p class="muted" id="impact" style="margin:16px 0" aria-live="polite"></p>
+    <button class="btn btn-primary btn-lg btn-block" id="donate-go" type="button">Donate $25 / month</button>
+    <p class="form-note center" style="margin-top:10px">🔒 Secure checkout. Cancel monthly support anytime.</p>
+    <div class="flex" style="justify-content:center;margin-top:16px">
+      <a class="btn btn-ghost btn-sm" data-donate="paypal" data-hide-empty>PayPal</a>
+      <a class="btn btn-ghost btn-sm" data-donate="kofi" data-hide-empty>Ko-fi</a>
+      <a class="btn btn-ghost btn-sm" data-donate="buyMeACoffee" data-hide-empty>Buy Me a Coffee</a>
+      <a class="btn btn-ghost btn-sm" data-donate="githubSponsors" data-hide-empty>GitHub Sponsors</a>
+      <a class="btn btn-ghost btn-sm" data-donate="patreon" data-hide-empty>Patreon</a>
+    </div>
+    <div id="donate-fallback" class="result small" hidden style="margin-top:16px">Online checkout is being set up. <a href="contact.html?topic=donation">Contact us</a> to support by bank transfer or become a founding supporter today.</div>
+  </div>
+  <aside class="stack">
+    <div class="card"><h3>This year's goal</h3><div class="goal-meter" style="margin:10px 0"><i id="goal-bar" style="width:0%"></i></div><p class="small muted" id="goal-text"></p></div>
+    <div class="card"><h3>Where your money goes</h3><div class="alloc bars">
+      <div class="alloc-row"><span>Data & city research</span><b>30%</b><div class="bar"><i data-w="30"></i></div></div><div class="alloc-row"><span>Local creators & writers (hiring)</span><b>25%</b><div class="bar"><i data-w="25"></i></div></div><div class="alloc-row"><span>Operations & hosting</span><b>15%</b><div class="bar"><i data-w="15"></i></div></div><div class="alloc-row"><span>Community prizes & contests</span><b>15%</b><div class="bar"><i data-w="15"></i></div></div><div class="alloc-row"><span>Marketing & outreach</span><b>15%</b><div class="bar"><i data-w="15"></i></div></div>
+    </div></div>
+  </aside>
+</div></section>
+<section class="section section-alt"><div class="container">
+  <div class="section-head center"><h2>Membership perks</h2><p class="muted">Monthly supporters get a little extra love back.</p></div>
+  <div class="grid grid-3">
+    <article class="card tier"><h3>Neighbour</h3><div class="price">$5<span class="small muted">/mo</span></div><ul><li>Ad-light newsletter edition</li><li>Supporter badge in the community</li><li>Our eternal thanks ♥</li></ul><a class="btn btn-ghost btn-block" href="#" data-tier="5">Choose</a></article>
+    <article class="card tier featured"><span class="ribbon">Most loved</span><h3>Local</h3><div class="price">$15<span class="small muted">/mo</span></div><ul><li>Everything in Neighbour</li><li>Early access to annual rankings</li><li>Monthly members-only Q&amp;A livestream</li><li>Vote on the next cities we cover</li></ul><a class="btn btn-primary btn-block" href="#" data-tier="15">Choose</a></article>
+    <article class="card tier"><h3>Ambassador</h3><div class="price">$50<span class="small muted">/mo</span></div><ul><li>Everything in Local</li><li>Name on our Supporters Wall</li><li>One 30-min relocation Q&amp;A call per year</li><li>Contest judge invitation</li></ul><a class="btn btn-ghost btn-block" href="#" data-tier="50">Choose</a></article>
+  </div>
+</div></section>
+<section class="section"><div class="container grid grid-3">
+  <article class="card"><div class="icon-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="m8.6 13.5 6.8 4M15.4 6.5l-6.8 4"/></svg></div><h3>Share LoveToLive</h3><p class="muted small">Free support that works: send a city guide to a friend who's thinking about moving.</p><button class="btn btn-ghost btn-sm" data-share>Share this site</button></article>
+  <article class="card"><div class="icon-badge teal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11v2a2 2 0 0 0 2 2h2l5 4V5L7 9H5a2 2 0 0 0-2 2zM16 8a5 5 0 0 1 0 8M19 5a9 9 0 0 1 0 14"/></svg></div><h3>Sponsor us</h3><p class="muted small">Brands can sponsor rankings, videos, contests and newsletter issues.</p><a class="btn btn-ghost btn-sm" href="advertise.html">Sponsorship options</a></article>
+  <article class="card"><div class="icon-badge gold"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0"/><path d="M16 4.5a3.5 3.5 0 0 1 0 7M18 14a6 6 0 0 1 3.5 6"/></svg></div><h3>Contribute</h3><p class="muted small">Know your city inside out? Write, film or fact-check for us — paid roles available.</p><a class="btn btn-ghost btn-sm" href="careers.html">See open roles</a></article>
+</div>
+<div class="container faq" style="max-width:820px;margin-top:40px">
+  <h2>Supporter FAQ</h2>
+  <details><summary>Is my donation tax-deductible?</summary><div>LoveToLive is an independent publisher, not a registered charity, so contributions are generally not tax-deductible. They go directly into running and growing the site.</div></details>
+  <details><summary>Can I cancel monthly support?</summary><div>Yes, anytime, from the receipt email or by contacting us. No questions asked.</div></details>
+  <details><summary>Do supporters influence rankings?</summary><div>Never. Rankings are editorially independent and data-driven. Supporters and sponsors cannot buy a better score. See our <a href="methodology.html">methodology</a>.</div></details>
+</div></section>
