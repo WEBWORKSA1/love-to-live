@@ -1,0 +1,102 @@
+---
+layout: "default"
+title: "Free Relocation Tools: Cost of Living, Moving Cost & Mortgage Calculators"
+description: "Free calculators: cost-of-living salary comparison, moving cost estimator, mortgage & home affordability, and a Live-Well life-balance score."
+root: ""
+scripts: ["tools.js"]
+crumbs: [["Home","index.html"],["Tools","tools.html"]]
+---
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"LoveToLive relocation calculators","applicationCategory":"FinanceApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}</script>
+<section class="page-hero"><div class="container">{% include crumbs.html %}<span class="eyebrow">Free tools · no sign-up</span><h1>Relocation calculators</h1><p class="lead">Put real numbers on your next move — salary needed, moving costs, home affordability and how balanced your life is today.</p></div></section>
+<section class="section-sm"><div class="container layout-side">
+<div>
+  <div class="tabs" role="tablist">
+    <button role="tab" aria-selected="true" data-tab="cost">💵 Cost of living</button>
+    <button role="tab" aria-selected="false" data-tab="moving">🚚 Moving cost</button>
+    <button role="tab" aria-selected="false" data-tab="mortgage">🏡 Mortgage</button>
+    <button role="tab" aria-selected="false" data-tab="balance">🌿 Live-Well score</button>
+  </div>
+
+  <div class="tab-panel active" id="cost" role="tabpanel">
+    <h2>Cost of living calculator</h2>
+    <p class="muted">How much would you need to earn in a new city to keep the same lifestyle?</p>
+    <form class="card form-grid two" id="col-form">
+      <div class="field"><label for="col-from">I live in</label><select id="col-from">{% include city-options.html sel="new-york" %}</select></div>
+      <div class="field"><label for="col-to">Moving to</label><select id="col-to">{% include city-options.html sel="lisbon" %}</select></div>
+      <div class="field"><label for="col-income">My monthly income (USD, after tax)</label><input id="col-income" type="number" value="5000" min="0" step="100"></div>
+      <div class="field"><label for="col-house">Household</label><select id="col-house"><option value="1">Single</option><option value="1.6">Couple</option><option value="2.2">Family of 3</option><option value="2.7">Family of 4</option></select></div>
+      <button class="btn btn-primary full" type="submit">Calculate</button>
+    </form>
+    <div class="result" id="col-out" style="margin-top:18px" aria-live="polite"></div>
+  </div>
+
+  <div class="tab-panel" id="moving" role="tabpanel">
+    <h2>Moving cost estimator</h2>
+    <p class="muted">Instant range — no email required. Based on distance, volume and services.</p>
+    <form class="card form-grid two" id="mv-form">
+      <div class="field"><label for="mv-from">From</label><select id="mv-from"><option value="">Custom distance…</option>{% include city-options.html sel="toronto" %}</select></div>
+      <div class="field"><label for="mv-to">To</label><select id="mv-to"><option value="">Custom distance…</option>{% include city-options.html sel="calgary" %}</select></div>
+      <div class="field"><label for="mv-dist">Distance (km)</label><input id="mv-dist" type="number" min="1" value="2700"></div>
+      <div class="field"><label for="mv-size">Home size</label><select id="mv-size"><option value="0.5">Studio / few items</option><option value="1" selected>1 bedroom</option><option value="1.6">2 bedrooms</option><option value="2.3">3 bedrooms</option><option value="3.1">4+ bedrooms</option></select></div>
+      <div class="field"><label for="mv-type">Move type</label><select id="mv-type"><option value="full">Full-service movers</option><option value="container">Moving container (you pack/load)</option><option value="diy">DIY truck rental</option></select></div>
+      <div class="field"><label for="mv-month">Month</label><select id="mv-month"><option value="1.15">May–September (peak)</option><option value="1">October–April</option></select></div>
+      <div class="field full"><span style="font-weight:600;font-size:.9rem">Extras</span>
+        <div class="flex" style="margin-top:8px">
+          <label class="check"><input type="checkbox" id="mv-pack"> Packing service</label>
+          <label class="check"><input type="checkbox" id="mv-car"> Ship a car</label>
+          <label class="check"><input type="checkbox" id="mv-storage"> 1 month storage</label>
+        </div>
+      </div>
+      <button class="btn btn-primary full" type="submit">Estimate my move</button>
+    </form>
+    <div class="result" id="mv-out" style="margin-top:18px" aria-live="polite"></div>
+  </div>
+
+  <div class="tab-panel" id="mortgage" role="tabpanel">
+    <h2>Mortgage &amp; affordability calculator</h2>
+    <form class="card form-grid two" id="mg-form">
+      <div class="field"><label for="mg-price">Home price ($)</label><input id="mg-price" type="number" value="450000" min="0" step="1000"></div>
+      <div class="field"><label for="mg-down">Down payment (%)</label><input id="mg-down" type="number" value="20" min="0" max="100" step="1"></div>
+      <div class="field"><label for="mg-rate">Interest rate (%)</label><input id="mg-rate" type="number" value="6.25" min="0" step="0.05"></div>
+      <div class="field"><label for="mg-years">Term (years)</label><select id="mg-years"><option>30</option><option>25</option><option>20</option><option>15</option></select></div>
+      <div class="field"><label for="mg-tax">Property tax + insurance ($/yr)</label><input id="mg-tax" type="number" value="6500" min="0" step="100"></div>
+      <div class="field"><label for="mg-income">Gross household income ($/yr)</label><input id="mg-income" type="number" value="120000" min="0" step="1000"></div>
+      <button class="btn btn-primary full" type="submit">Calculate payment</button>
+    </form>
+    <div class="result" id="mg-out" style="margin-top:18px" aria-live="polite"></div>
+  </div>
+
+  <div class="tab-panel" id="balance" role="tabpanel">
+    <h2>Live-Well score</h2>
+    <p class="muted">Rate each pillar of your life today from 1 (struggling) to 10 (thriving). Inspired by longevity research on the world's healthiest communities.</p>
+    <form class="card" id="lw-form">
+      <div class="grid grid-2">
+      <div class="field"><label for="lw-move">Daily movement: <output id="lw-move-o">6</output>/10</label><input id="lw-move" type="range" min="1" max="10" value="6" data-lw="move"></div><div class="field"><label for="lw-food">Food & nutrition: <output id="lw-food-o">6</output>/10</label><input id="lw-food" type="range" min="1" max="10" value="6" data-lw="food"></div><div class="field"><label for="lw-sleep">Sleep & rest: <output id="lw-sleep-o">6</output>/10</label><input id="lw-sleep" type="range" min="1" max="10" value="6" data-lw="sleep"></div><div class="field"><label for="lw-people">Friends & family: <output id="lw-people-o">6</output>/10</label><input id="lw-people" type="range" min="1" max="10" value="6" data-lw="people"></div><div class="field"><label for="lw-purpose">Purpose & work: <output id="lw-purpose-o">6</output>/10</label><input id="lw-purpose" type="range" min="1" max="10" value="6" data-lw="purpose"></div><div class="field"><label for="lw-money">Money & security: <output id="lw-money-o">6</output>/10</label><input id="lw-money" type="range" min="1" max="10" value="6" data-lw="money"></div><div class="field"><label for="lw-place">Home & neighbourhood: <output id="lw-place-o">6</output>/10</label><input id="lw-place" type="range" min="1" max="10" value="6" data-lw="place"></div><div class="field"><label for="lw-nature">Time in nature: <output id="lw-nature-o">6</output>/10</label><input id="lw-nature" type="range" min="1" max="10" value="6" data-lw="nature"></div>
+      </div>
+      <button class="btn btn-primary" style="margin-top:14px" type="submit">Get my Live-Well score</button>
+    </form>
+    <div class="result" id="lw-out" style="margin-top:18px" aria-live="polite"></div>
+  </div>
+  <div class="ad-slot " data-slot="inContent" aria-label="Advertisement"></div>
+  <div class="faq" style="margin-top:28px">
+    <h2>Calculator FAQ</h2>
+    <details><summary>How is the cost-of-living comparison calculated?</summary><div>We compare each city's cost index (New York = 100) and central 1-bed rent. Your income is split into roughly 35% housing and 65% everything else, and each part is scaled by the matching index. Household size adjusts the non-rent basket.</div></details>
+    <details><summary>How accurate is the moving cost estimate?</summary><div>It gives a planning range based on typical rates for distance, volume and services. Real quotes depend on inventory, access (stairs, elevators), dates and insurance. Get binding quotes to be sure — <a href="get-quotes.html">compare free quotes here</a>.</div></details>
+    <details><summary>What is a safe mortgage payment?</summary><div>A common lender guideline is the 28/36 rule: keep housing costs under 28% of gross income and total debt payments under 36%. The calculator flags where you land.</div></details>
+  </div>
+</div>
+<aside><div class="sticky-side stack">
+  <section class="card" style="border:2px solid var(--love);box-shadow:var(--shadow)">
+  <span class="eyebrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19.5 12.6 12 20l-7.5-7.4A5 5 0 1 1 12 6a5 5 0 1 1 7.5 6.6z"/></svg> Free service</span>
+  <h3 style="font-size:1.4rem">Ready for real quotes?</h3>
+  <p class="muted small">Turn your estimate into binding quotes from licensed pros. Free and no obligation.</p>
+  <form action="get-quotes.html" method="get" class="form-grid two" style="margin-top:12px">
+    <div class="field"><label for="lm-need-x">I need</label><select id="lm-need-x" name="need"><option value="movers">Moving quotes</option><option value="agent">A real-estate agent</option><option value="mortgage">Mortgage pre-approval</option><option value="international">International relocation</option><option value="consult">Relocation consult</option></select></div>
+    <div class="field"><label for="lm-to-x">Moving to</label><input id="lm-to-x" type="text" name="to" value="" placeholder="City"></div>
+    <button class="btn btn-primary btn-block full" type="submit">Get my free quotes →</button>
+  </form>
+  <p class="form-note" style="margin-top:10px">🔒 Your info is only shared with the partners you choose.</p>
+</section>
+  <div class="ad-slot sidebar" data-slot="sidebar" aria-label="Advertisement"></div>
+</div></aside>
+</div></section>

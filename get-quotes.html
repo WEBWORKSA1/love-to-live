@@ -1,0 +1,92 @@
+---
+layout: "default"
+title: "Get Free Moving, Real Estate & Mortgage Quotes"
+description: "Compare free quotes from vetted movers, top local real-estate agents, lenders and international relocation experts. 60 seconds, no obligation."
+root: ""
+scripts: ["leadform.js"]
+crumbs: [["Home","index.html"],["Get free quotes","get-quotes.html"]]
+no_popup: true
+---
+<section class="page-hero"><div class="container">{% include crumbs.html %}<span class="eyebrow">Free · 60 seconds · No obligation</span><h1>Get matched with vetted pros for your move</h1><p class="lead">One short form. Compare quotes from licensed movers, top local agents, lenders and relocation specialists — and choose who contacts you.</p></div></section>
+<section class="section-sm"><div class="container lead-shell">
+  <div>
+  <form class="lead-form" id="lead" data-form="leads" data-multistep novalidate>
+    <div class="progress"><i id="ld-bar"></i></div>
+    <div class="step-label"><span id="ld-step">Step 1 of 4</span><span>🔒 Secure &amp; private</span></div>
+
+    <fieldset class="step active" data-step="1" style="border:0;padding:0;margin:0">
+      <legend><h3>What do you need?</h3></legend>
+      <div class="option-grid">
+        <label class="option"><input type="radio" name="need" value="movers" required checked><span><i>🚚</i>Moving quotes<small>Local & long-distance</small></span></label><label class="option"><input type="radio" name="need" value="agent" required><span><i>🏡</i>Real-estate agent<small>Buy or sell a home</small></span></label><label class="option"><input type="radio" name="need" value="mortgage" required><span><i>🏦</i>Mortgage<small>Pre-approval & rates</small></span></label><label class="option"><input type="radio" name="need" value="international" required><span><i>✈️</i>International move<small>Shipping, visas, setup</small></span></label><label class="option"><input type="radio" name="need" value="rentals" required><span><i>🔑</i>Rental search<small>Apartments & homes</small></span></label><label class="option"><input type="radio" name="need" value="insurance" required><span><i>🛡️</i>Insurance<small>Home, renters, health</small></span></label><label class="option"><input type="radio" name="need" value="consult" required><span><i>🧭</i>Relocation consult<small>1:1 planning session</small></span></label><label class="option"><input type="radio" name="need" value="corporate" required><span><i>🏢</i>Corporate relocation<small>Moving employees</small></span></label>
+      </div>
+    </fieldset>
+
+    <fieldset class="step" data-step="2" style="border:0;padding:0;margin:0">
+      <legend><h3>Where &amp; when?</h3></legend>
+      <div class="form-grid two">
+        <div class="field"><label for="ld-from">Moving from (ZIP / postcode / city) *</label><input id="ld-from" name="from" type="text" required autocomplete="postal-code"></div>
+        <div class="field"><label for="ld-to">Moving to (city) *</label><input id="ld-to" name="to" type="text" required></div>
+        <div class="field"><label for="ld-date">Target move date</label><input id="ld-date" name="move_date" type="date"></div>
+        <div class="field"><label for="ld-flex">Date flexibility</label><select id="ld-flex" name="flexibility"><option>Exact date</option><option>± 1 week</option><option>± 1 month</option><option>Not sure yet</option></select></div>
+      </div>
+    </fieldset>
+
+    <fieldset class="step" data-step="3" style="border:0;padding:0;margin:0">
+      <legend><h3>A few details</h3></legend>
+      <div class="form-grid two">
+        <div class="field" data-for="movers international"><label for="ld-size">Home size</label><select id="ld-size" name="home_size"><option>Studio</option><option selected>1 bedroom</option><option>2 bedrooms</option><option>3 bedrooms</option><option>4+ bedrooms</option><option>Office / commercial</option></select></div>
+        <div class="field" data-for="movers international"><label for="ld-services">Services</label><select id="ld-services" name="services"><option>Full service (pack + move)</option><option>Move only</option><option>Container / pod</option><option>Labor only</option></select></div>
+        <div class="field" data-for="movers international"><label for="ld-vehicle">Shipping a vehicle?</label><select id="ld-vehicle" name="vehicle"><option>No</option><option>Yes — 1 vehicle</option><option>Yes — 2+ vehicles</option></select></div>
+        <div class="field" data-for="agent mortgage rentals"><label for="ld-intent">I want to</label><select id="ld-intent" name="intent"><option>Buy</option><option>Sell</option><option>Buy and sell</option><option>Rent</option></select></div>
+        <div class="field" data-for="agent mortgage rentals"><label for="ld-price">Price range / budget</label><select id="ld-price" name="budget"><option>Under $250K</option><option>$250K–$500K</option><option>$500K–$750K</option><option>$750K–$1M</option><option>$1M+</option><option>Rent: under $1,500/mo</option><option>Rent: $1,500–3,000/mo</option><option>Rent: $3,000+/mo</option></select></div>
+        <div class="field" data-for="agent mortgage"><label for="ld-pre">Pre-approved for a mortgage?</label><select id="ld-pre" name="preapproved"><option>No</option><option>Yes</option><option>Not needed (cash)</option></select></div>
+        <div class="field" data-for="mortgage"><label for="ld-credit">Credit score (estimate)</label><select id="ld-credit" name="credit"><option>Excellent (740+)</option><option>Good (680–739)</option><option>Fair (620–679)</option><option>Below 620</option><option>Not sure</option></select></div>
+        <div class="field" data-for="mortgage agent"><label for="ld-first">First-time buyer?</label><select id="ld-first" name="first_time"><option>No</option><option>Yes</option></select></div>
+        <div class="field" data-for="insurance"><label for="ld-ins">Insurance type</label><select id="ld-ins" name="insurance_type"><option>Homeowners</option><option>Renters</option><option>Auto</option><option>International health</option><option>Travel / nomad</option></select></div>
+        <div class="field" data-for="corporate"><label for="ld-emp">Employees relocating (per year)</label><select id="ld-emp" name="employees"><option>1–5</option><option>6–25</option><option>26–100</option><option>100+</option></select></div>
+        <div class="field full"><label for="ld-notes">Anything else? (optional)</label><textarea id="ld-notes" name="notes" placeholder="Special items (piano, art), pets, stairs, visa questions…" style="min-height:90px"></textarea></div>
+      </div>
+    </fieldset>
+
+    <fieldset class="step" data-step="4" style="border:0;padding:0;margin:0">
+      <legend><h3>Where should we send your quotes?</h3></legend>
+      <div class="form-grid two">
+        <div class="field"><label for="ld-name">Full name *</label><input id="ld-name" name="name" type="text" required autocomplete="name"></div>
+        <div class="field"><label for="ld-email">Email *</label><input id="ld-email" name="email" type="email" required autocomplete="email"></div>
+        <div class="field"><label for="ld-phone">Phone</label><input id="ld-phone" name="phone" type="tel" autocomplete="tel" placeholder="Optional — faster quotes"></div>
+        <div class="field"><label for="ld-contact">Preferred contact</label><select id="ld-contact" name="contact_pref"><option>Email only</option><option>Phone or text</option><option>Any</option></select></div>
+        <label class="check full"><input type="checkbox" name="consent" value="yes" required> I agree that LoveToLive and up to 5 matched partners for the service I selected may contact me about my request by email, and by phone/text if I provided a number (msg &amp; data rates may apply). Consent is not a condition of purchase. I accept the <a href="terms.html" target="_blank">Terms</a> and <a href="privacy.html" target="_blank">Privacy Policy</a>.</label>
+        <label class="check full"><input type="checkbox" name="newsletter" value="yes" checked> Also send me the free 90-day relocation checklist &amp; weekly "Best Places" email.</label>
+      </div>
+    </fieldset>
+    <p class="form-error" id="ld-err" role="alert">Please complete the required fields.</p>
+    <div class="step-nav"><button class="btn btn-ghost" type="button" id="ld-back" disabled>← Back</button><button class="btn btn-primary btn-lg" type="button" id="ld-next">Continue →</button></div>
+  </form>
+  <div class="form-success lead-form" id="ld-success" tabindex="-1">
+    <h2>🎉 You're matched!</h2>
+    <p>Thanks — your request is in. Expect your first quotes by email shortly (usually within one business day).</p>
+    <h3 style="margin-top:20px">While you wait</h3>
+    <ul class="trust-list">
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="m8 12 3 3 5-6"/></svg><a href="guides/relocation-checklist.html">Open your 90-day relocation checklist</a></li>
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="m8 12 3 3 5-6"/></svg><a href="tools.html#moving">Sanity-check quotes with our moving cost estimator</a></li>
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="m8 12 3 3 5-6"/></svg><a href="guides/avoid-moving-scams.html">Read: 9 red flags of a moving scam</a></li>
+    </ul>
+    <div id="ld-offers" style="margin-top:18px"></div>
+  </div>
+  </div>
+  <aside class="stack">
+    <div class="card"><h3>How it works</h3>
+      <ol style="padding-left:18px;margin:0" class="small">
+        <li><b>Tell us about your move</b> — 60 seconds.</li>
+        <li><b>We match you</b> with up to 5 vetted pros for your route and needs.</li>
+        <li><b>Compare &amp; choose</b> — no obligation, ever.</li>
+      </ol></div>
+    <div class="card"><ul class="trust-list">
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3 4 6v6c0 5 3.5 8 8 9 4.5-1 8-4 8-9V6z"/><path d="m9 12 2 2 4-4"/></svg><div><b>Vetted partners</b><br><span class="small muted">Licensed &amp; insured movers (USDOT/FMCSA-registered in the US), licensed agents and regulated lenders.</span></div></li>
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg><div><b>Privacy first</b><br><span class="small muted">We never sell your data to random lists. Only partners for the service you chose.</span></div></li>
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="6" width="20" height="12" rx="2"/><circle cx="12" cy="12" r="3"/><path d="M6 12h0M18 12h0"/></svg><div><b>Free for you</b><br><span class="small muted">Partners pay for introductions. <a href="disclosure.html">Disclosure</a>.</span></div></li>
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><div><b>Fast</b><br><span class="small muted">Most requests get a first response within one business day.</span></div></li>
+    </ul></div>
+    <div class="card small"><b>Are you a mover, agent or lender?</b><p class="muted" style="margin:6px 0 10px">Get exclusive, high-intent relocation leads in your market.</p><a class="btn btn-ghost btn-sm" href="advertise.html#partners">Join our partner network →</a></div>
+  </aside>
+</div></section>
