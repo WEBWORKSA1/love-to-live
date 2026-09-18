@@ -1,0 +1,52 @@
+---
+layout: "default"
+title: "Best Places to Live in the World (2026–27 Rankings)"
+description: "The best places to live in 2026–27: 45 cities ranked on safety, healthcare, cost of living, jobs, nature and culture. Filter for nomads, retirees and families."
+root: ""
+scripts: ["places.js"]
+crumbs: [["Home","index.html"],["Best Places to Live","places.html"]]
+---
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"ItemList","name":"Best places to live","itemListElement":[{"@type":"ListItem","position":1,"name":"Tokyo, Japan","url":"{{ site.site_url }}/places/tokyo.html"},{"@type":"ListItem","position":2,"name":"Copenhagen, Denmark","url":"{{ site.site_url }}/places/copenhagen.html"},{"@type":"ListItem","position":3,"name":"Zurich, Switzerland","url":"{{ site.site_url }}/places/zurich.html"},{"@type":"ListItem","position":4,"name":"Vienna, Austria","url":"{{ site.site_url }}/places/vienna.html"},{"@type":"ListItem","position":5,"name":"Seoul, South Korea","url":"{{ site.site_url }}/places/seoul.html"},{"@type":"ListItem","position":6,"name":"Melbourne, Australia","url":"{{ site.site_url }}/places/melbourne.html"},{"@type":"ListItem","position":7,"name":"Singapore, Singapore","url":"{{ site.site_url }}/places/singapore.html"},{"@type":"ListItem","position":8,"name":"Seattle, United States","url":"{{ site.site_url }}/places/seattle.html"},{"@type":"ListItem","position":9,"name":"Sydney, Australia","url":"{{ site.site_url }}/places/sydney.html"},{"@type":"ListItem","position":10,"name":"Prague, Czechia","url":"{{ site.site_url }}/places/prague.html"},{"@type":"ListItem","position":11,"name":"Tallinn, Estonia","url":"{{ site.site_url }}/places/tallinn.html"},{"@type":"ListItem","position":12,"name":"Vancouver, Canada","url":"{{ site.site_url }}/places/vancouver.html"},{"@type":"ListItem","position":13,"name":"Calgary, Canada","url":"{{ site.site_url }}/places/calgary.html"},{"@type":"ListItem","position":14,"name":"Valencia, Spain","url":"{{ site.site_url }}/places/valencia.html"},{"@type":"ListItem","position":15,"name":"Amsterdam, Netherlands","url":"{{ site.site_url }}/places/amsterdam.html"},{"@type":"ListItem","position":16,"name":"Raleigh, United States","url":"{{ site.site_url }}/places/raleigh.html"},{"@type":"ListItem","position":17,"name":"Denver, United States","url":"{{ site.site_url }}/places/denver.html"},{"@type":"ListItem","position":18,"name":"Pittsburgh, United States","url":"{{ site.site_url }}/places/pittsburgh.html"},{"@type":"ListItem","position":19,"name":"Montréal, Canada","url":"{{ site.site_url }}/places/montreal.html"},{"@type":"ListItem","position":20,"name":"Auckland, New Zealand","url":"{{ site.site_url }}/places/auckland.html"}]}</script>
+<section class="page-hero">
+  <div class="container">
+    {% include crumbs.html %}
+    <span class="eyebrow">2026–27 LiveScore rankings</span>
+    <h1>Best places to live in the world</h1>
+    <p class="lead">45 cities scored across 12 quality-of-life factors. Filter by who you are, sort by what matters, and click any city for its full report card.</p>
+  </div>
+</section>
+<section class="section-sm">
+  <div class="container">
+    <div class="toolbar">
+      <div class="flex">
+        <label class="sr-only" for="pf-q">Search</label><input id="pf-q" type="search" placeholder="Search city or country…">
+        <label class="sr-only" for="pf-region">Region</label>
+        <select id="pf-region"><option value="">All regions</option><option>Africa</option><option>Asia</option><option>Europe</option><option>Latin America</option><option>Middle East</option><option>North America</option><option>Oceania</option></select>
+        <label class="sr-only" for="pf-sort">Sort by</label>
+        <select id="pf-sort"><option value="score">Sort: LiveScore</option><option value="afford">Most affordable</option><option value="safety">Safest</option><option value="health">Best healthcare</option><option value="jobs">Best jobs</option><option value="nature">Nature &amp; outdoors</option><option value="culture">Culture &amp; food</option><option value="internet">Fastest internet</option><option value="family">Family-friendly</option><option value="temp">Warmest</option><option value="monthly">Lowest monthly cost</option></select>
+      </div>
+      <div class="seg" role="tablist" aria-label="View"><button class="active" data-view="grid">Cards</button><button data-view="table">Table</button></div>
+    </div>
+    <div class="chips" id="pf-tags" style="margin-bottom:22px">
+      <button class="chip active" data-tag="">All</button><button class="chip" data-tag="nomad">💻 Nomads</button><button class="chip" data-tag="retire">🌅 Retirees</button><button class="chip" data-tag="family">👨‍👩‍👧 Families</button><button class="chip" data-tag="affordable">💸 Budget</button><button class="chip" data-tag="safe">🛡️ Safe</button><button class="chip" data-tag="coastal">🌊 Coastal</button><button class="chip" data-tag="sunny">☀️ Sunny</button><button class="chip" data-tag="career">💼 Career</button><button class="chip" data-tag="tech">🧑‍💻 Tech</button><button class="chip" data-tag="outdoors">🏔️ Outdoors</button><button class="chip" data-tag="culture">🎭 Culture</button><button class="chip" data-tag="english">🗣️ English-speaking</button>
+    </div>
+    <p class="small muted" id="pf-count" aria-live="polite">45 cities</p>
+    <div id="pf-grid" class="grid grid-3">{% include city-card.html i=0 %}{% include city-card.html i=1 %}{% include city-card.html i=2 %}{% include city-card.html i=3 %}{% include city-card.html i=4 %}{% include city-card.html i=5 %}{% include city-card.html i=6 %}{% include city-card.html i=7 %}{% include city-card.html i=8 %}{% include city-card.html i=9 %}{% include city-card.html i=10 %}{% include city-card.html i=11 %}{% include city-card.html i=12 %}{% include city-card.html i=13 %}{% include city-card.html i=14 %}{% include city-card.html i=15 %}{% include city-card.html i=16 %}{% include city-card.html i=17 %}{% include city-card.html i=18 %}{% include city-card.html i=19 %}{% include city-card.html i=20 %}{% include city-card.html i=21 %}{% include city-card.html i=22 %}{% include city-card.html i=23 %}{% include city-card.html i=24 %}{% include city-card.html i=25 %}{% include city-card.html i=26 %}{% include city-card.html i=27 %}{% include city-card.html i=28 %}{% include city-card.html i=29 %}{% include city-card.html i=30 %}{% include city-card.html i=31 %}{% include city-card.html i=32 %}{% include city-card.html i=33 %}{% include city-card.html i=34 %}{% include city-card.html i=35 %}{% include city-card.html i=36 %}{% include city-card.html i=37 %}{% include city-card.html i=38 %}{% include city-card.html i=39 %}{% include city-card.html i=40 %}{% include city-card.html i=41 %}{% include city-card.html i=42 %}{% include city-card.html i=43 %}{% include city-card.html i=44 %}</div>
+    <div id="pf-table" class="table-wrap" hidden></div>
+    <div class="ad-slot " data-slot="inContent" aria-label="Advertisement"></div>
+    <div class="grid grid-2" style="margin-top:12px">
+      <section class="card" style="border:2px solid var(--love);box-shadow:var(--shadow)">
+  <span class="eyebrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19.5 12.6 12 20l-7.5-7.4A5 5 0 1 1 12 6a5 5 0 1 1 7.5 6.6z"/></svg> Free service</span>
+  <h3 style="font-size:1.4rem">Moving soon? Get matched with vetted pros</h3>
+  <p class="muted small">Free, no-obligation quotes from licensed movers, top local agents and lenders. Takes 60 seconds.</p>
+  <form action="get-quotes.html" method="get" class="form-grid two" style="margin-top:12px">
+    <div class="field"><label for="lm-need-x">I need</label><select id="lm-need-x" name="need"><option value="movers">Moving quotes</option><option value="agent">A real-estate agent</option><option value="mortgage">Mortgage pre-approval</option><option value="international">International relocation</option><option value="consult">Relocation consult</option></select></div>
+    <div class="field"><label for="lm-to-x">Moving to</label><input id="lm-to-x" type="text" name="to" value="" placeholder="City"></div>
+    <button class="btn btn-primary btn-block full" type="submit">Get my free quotes →</button>
+  </form>
+  <p class="form-note" style="margin-top:10px">🔒 Your info is only shared with the partners you choose.</p>
+</section>
+      <div class="card"><div class="icon-badge teal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M9.5 9a2.5 2.5 0 1 1 3.5 2.3c-.6.3-1 .9-1 1.6V14M12 17.5h0"/></svg></div><h3>Not sure where to start?</h3><p class="muted">The City Match quiz re-ranks every city around <em>your</em> priorities — budget, climate, safety, career and lifestyle — in about two minutes.</p><a class="btn btn-live" href="match.html">Find my best city →</a></div>
+    </div>
+  </div>
+</section>

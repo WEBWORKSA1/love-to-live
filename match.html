@@ -1,0 +1,40 @@
+---
+layout: "default"
+title: "City Match Quiz: Where Should I Live?"
+description: "Where should I live? Answer 7 quick questions and get your top 5 best-matching cities worldwide, ranked with a personal match score."
+root: ""
+scripts: ["match.js"]
+crumbs: [["Home","index.html"],["City Match Quiz","match.html"]]
+---
+<section class="page-hero"><div class="container">{% include crumbs.html %}<span class="eyebrow">2-minute quiz</span><h1>Where should I live?</h1><p class="lead">Seven questions. 45 cities. One ranked shortlist built around what matters to you.</p></div></section>
+<section class="section-sm"><div class="container" style="max-width:860px">
+  <form class="lead-form" id="quiz" novalidate>
+    <div class="progress"><i id="qz-bar"></i></div>
+    <div class="step-label"><span id="qz-step">Question 1 of 7</span><span>~2 min</span></div>
+
+    <div class="step active" data-q="1"><h3>What's your monthly budget for living costs (incl. rent)?</h3>
+      <div class="option-grid"><label class="option"><input type="radio" name="budget" value="1200"><span><i>💸</i>Under $1,500</span></label><label class="option"><input type="radio" name="budget" value="2200" checked><span><i>💵</i>$1,500–2,500</span></label><label class="option"><input type="radio" name="budget" value="3500"><span><i>💰</i>$2,500–4,000</span></label><label class="option"><input type="radio" name="budget" value="9999"><span><i>💎</i>$4,000+</span></label></div></div>
+
+    <div class="step" data-q="2"><h3>Your ideal climate?</h3>
+      <div class="option-grid"><label class="option"><input type="radio" name="climate" value="Tropical"><span><i>🌴</i>Hot all year</span></label><label class="option"><input type="radio" name="climate" value="Warm"><span><i>☀️</i>Warm & sunny</span></label><label class="option"><input type="radio" name="climate" value="Mild" checked><span><i>🌤️</i>Mild, spring-like</span></label><label class="option"><input type="radio" name="climate" value="Four-season"><span><i>🍂</i>Four real seasons</span></label><label class="option"><input type="radio" name="climate" value="Cold"><span><i>❄️</i>I love winter</span></label><label class="option"><input type="radio" name="climate" value="any"><span><i>🤷</i>Don't mind</span></label></div></div>
+
+    <div class="step" data-q="3"><h3>Which region(s) are you open to?</h3><p class="small muted">Pick as many as you like.</p>
+      <div class="option-grid"><label class="option"><input type="checkbox" name="region" value="Africa" checked><span>Africa</span></label><label class="option"><input type="checkbox" name="region" value="Asia" checked><span>Asia</span></label><label class="option"><input type="checkbox" name="region" value="Europe" checked><span>Europe</span></label><label class="option"><input type="checkbox" name="region" value="Latin America" checked><span>Latin America</span></label><label class="option"><input type="checkbox" name="region" value="Middle East" checked><span>Middle East</span></label><label class="option"><input type="checkbox" name="region" value="North America" checked><span>North America</span></label><label class="option"><input type="checkbox" name="region" value="Oceania" checked><span>Oceania</span></label></div></div>
+
+    <div class="step" data-q="4"><h3>What matters most? <span class="small muted">(drag each slider)</span></h3>
+      <div class="grid grid-2"><div class="field"><label for="w-safety">Safety: <output id="w-safety-o">3</output></label><input id="w-safety" type="range" min="0" max="5" value="3" data-w="safety"></div><div class="field"><label for="w-health">Healthcare: <output id="w-health-o">3</output></label><input id="w-health" type="range" min="0" max="5" value="3" data-w="health"></div><div class="field"><label for="w-jobs">Jobs & career: <output id="w-jobs-o">3</output></label><input id="w-jobs" type="range" min="0" max="5" value="3" data-w="jobs"></div><div class="field"><label for="w-nature">Nature & outdoors: <output id="w-nature-o">3</output></label><input id="w-nature" type="range" min="0" max="5" value="3" data-w="nature"></div><div class="field"><label for="w-culture">Culture & food: <output id="w-culture-o">3</output></label><input id="w-culture" type="range" min="0" max="5" value="3" data-w="culture"></div><div class="field"><label for="w-nightlife">Nightlife: <output id="w-nightlife-o">3</output></label><input id="w-nightlife" type="range" min="0" max="5" value="3" data-w="nightlife"></div><div class="field"><label for="w-family">Family & schools: <output id="w-family-o">3</output></label><input id="w-family" type="range" min="0" max="5" value="3" data-w="family"></div><div class="field"><label for="w-walk">Walkable, no car: <output id="w-walk-o">3</output></label><input id="w-walk" type="range" min="0" max="5" value="3" data-w="walk"></div><div class="field"><label for="w-internet">Fast internet: <output id="w-internet-o">3</output></label><input id="w-internet" type="range" min="0" max="5" value="3" data-w="internet"></div><div class="field"><label for="w-english">English widely spoken: <output id="w-english-o">3</output></label><input id="w-english" type="range" min="0" max="5" value="3" data-w="english"></div></div></div>
+
+    <div class="step" data-q="5"><h3>Who's moving?</h3>
+      <div class="option-grid"><label class="option"><input type="radio" name="who" value="solo" checked><span><i>🧍</i>Just me</span></label><label class="option"><input type="radio" name="who" value="couple"><span><i>💑</i>Couple</span></label><label class="option"><input type="radio" name="who" value="family"><span><i>👨‍👩‍👧</i>Family with kids</span></label><label class="option"><input type="radio" name="who" value="retire"><span><i>🌅</i>Retiring</span></label><label class="option"><input type="radio" name="who" value="nomad"><span><i>💻</i>Remote worker / nomad</span></label></div></div>
+
+    <div class="step" data-q="6"><h3>City vibe?</h3>
+      <div class="option-grid"><label class="option"><input type="radio" name="size" value="big"><span><i>🏙️</i>Big & buzzing</span></label><label class="option"><input type="radio" name="size" value="mid"><span><i>🏘️</i>Mid-size, easy-going</span></label><label class="option"><input type="radio" name="size" value="small"><span><i>🌿</i>Small & calm</span></label><label class="option"><input type="radio" name="size" value="any" checked><span><i>🤷</i>No preference</span></label></div></div>
+
+    <div class="step" data-q="7"><h3>When are you planning to move?</h3>
+      <div class="option-grid"><label class="option"><input type="radio" name="when" value="dreaming" checked><span><i>💭</i>Just dreaming</span></label><label class="option"><input type="radio" name="when" value="12m"><span><i>🗓️</i>Within a year</span></label><label class="option"><input type="radio" name="when" value="6m"><span><i>📦</i>Within 6 months</span></label><label class="option"><input type="radio" name="when" value="3m"><span><i>🚚</i>Within 3 months</span></label></div></div>
+
+    <div class="step-nav"><button class="btn btn-ghost" type="button" id="qz-back" disabled>← Back</button><button class="btn btn-primary" type="button" id="qz-next">Next →</button></div>
+  </form>
+  <div id="qz-results" hidden></div>
+  <div class="ad-slot " data-slot="inContent" aria-label="Advertisement"></div>
+</div></section>

@@ -1,0 +1,37 @@
+---
+layout: "default"
+title: "Compare Cities Side by Side — Cost of Living, Safety & Quality of Life"
+description: "Compare any two cities on cost of living, rent, salaries, safety, healthcare, jobs, weather, internet and 12 quality-of-life factors."
+root: ""
+scripts: ["compare.js"]
+crumbs: [["Home","index.html"],["Compare cities","compare.html"]]
+---
+<section class="page-hero"><div class="container">{% include crumbs.html %}<span class="eyebrow">City vs City</span><h1>Compare two cities</h1><p class="lead">Pick any two places to see who wins on 12 quality-of-life factors — and exactly how much more (or less) life costs.</p></div></section>
+<section class="section-sm"><div class="container">
+  <div class="card" style="margin-bottom:26px">
+    <div class="vs">
+      <div><label for="cmp-a">City A</label><select id="cmp-a">{% include city-options.html sel="lisbon" %}</select></div>
+      <div class="vs-badge">VS</div>
+      <div><label for="cmp-b">City B</label><select id="cmp-b">{% include city-options.html sel="austin" %}</select></div>
+    </div>
+    <div class="form-grid two" style="margin-top:16px">
+      <div class="field"><label for="cmp-salary">Your monthly net income in City A (USD, optional)</label><input id="cmp-salary" type="number" min="0" step="100" placeholder="e.g. 4000"></div>
+      <div class="field" style="align-self:end"><button class="btn btn-ghost btn-block" id="cmp-swap" type="button">⇄ Swap cities</button></div>
+    </div>
+  </div>
+  <div id="cmp-out" aria-live="polite"></div>
+  <div class="ad-slot " data-slot="inContent" aria-label="Advertisement"></div>
+  <h2 style="margin-top:32px">Popular comparisons</h2>
+  <div class="chips"><a class="chip" href="compare.html?a=lisbon&b=porto">Lisbon vs Porto</a><a class="chip" href="compare.html?a=lisbon&b=valencia">Lisbon vs Valencia</a><a class="chip" href="compare.html?a=austin&b=raleigh">Austin vs Raleigh</a><a class="chip" href="compare.html?a=toronto&b=montreal">Toronto vs Montréal</a><a class="chip" href="compare.html?a=bangkok&b=chiang-mai">Bangkok vs Chiang Mai</a><a class="chip" href="compare.html?a=medellin&b=mexico-city">Medellín vs Mexico City</a><a class="chip" href="compare.html?a=london&b=dublin">London vs Dublin</a><a class="chip" href="compare.html?a=berlin&b=amsterdam">Berlin vs Amsterdam</a><a class="chip" href="compare.html?a=seattle&b=denver">Seattle vs Denver</a><a class="chip" href="compare.html?a=sydney&b=melbourne">Sydney vs Melbourne</a><a class="chip" href="compare.html?a=singapore&b=dubai">Singapore vs Dubai</a><a class="chip" href="compare.html?a=new-york&b=chicago">New York City vs Chicago</a></div>
+  <div style="margin-top:32px"><section class="card" style="border:2px solid var(--love);box-shadow:var(--shadow)">
+  <span class="eyebrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19.5 12.6 12 20l-7.5-7.4A5 5 0 1 1 12 6a5 5 0 1 1 7.5 6.6z"/></svg> Free service</span>
+  <h3 style="font-size:1.4rem">Moving soon? Get matched with vetted pros</h3>
+  <p class="muted small">Free, no-obligation quotes from licensed movers, top local agents and lenders. Takes 60 seconds.</p>
+  <form action="get-quotes.html" method="get" class="form-grid two" style="margin-top:12px">
+    <div class="field"><label for="lm-need-x">I need</label><select id="lm-need-x" name="need"><option value="movers">Moving quotes</option><option value="agent">A real-estate agent</option><option value="mortgage">Mortgage pre-approval</option><option value="international">International relocation</option><option value="consult">Relocation consult</option></select></div>
+    <div class="field"><label for="lm-to-x">Moving to</label><input id="lm-to-x" type="text" name="to" value="" placeholder="City"></div>
+    <button class="btn btn-primary btn-block full" type="submit">Get my free quotes →</button>
+  </form>
+  <p class="form-note" style="margin-top:10px">🔒 Your info is only shared with the partners you choose.</p>
+</section></div>
+</div></section>
