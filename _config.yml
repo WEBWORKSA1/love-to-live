@@ -1,0 +1,8 @@
+# LoveToLive.com — Jekyll config (GitHub Pages builds this automatically)
+title: LoveToLive
+# Public base URL used for canonical links, JSON-LD and the sitemap.
+# After connecting your custom domain, change to: https://lovetolive.com  (and set baseurl: "")
+site_url: https://webworksa1.github.io/love-to-live
+baseurl: "/love-to-live"
+permalink: none
+exclude: [README.md, docs, src, scripts, jekyll, "*.mjs", package.json, node_modules]

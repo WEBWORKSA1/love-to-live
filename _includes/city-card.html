@@ -1,0 +1,8 @@
+{% assign c = site.data.cities[include.i] %}<article class="card hover city-card reveal">
+  <div class="city-art" data-sky="{{ c.slug }}" style="background:{{ c.grad }}"><span class="flag" aria-hidden="true">{{ c.flag }}</span><span class="rank">#{{ c.rank }}</span><h3><a href="{{ page.root }}places/{{ c.slug }}.html">{{ c.name | escape }}</a></h3></div>
+  <div class="city-body">
+    <div class="flex" style="justify-content:space-between"><span class="small muted">{{ c.country | escape }} · {{ c.region | escape }}</span><span class="score-pill" title="LiveScore">{{ c.score }}</span></div>
+    <p class="small" style="margin:10px 0 0;color:var(--text-2)">{{ c.blurb | escape }}</p>
+    <div class="meta-row"><span>💵 ~${{ c.monthly_fmt }}/mo</span><span>🛡️ {{ c.safety }}</span><span>🌡️ {{ c.temp }}°C</span></div>
+  </div>
+</article>

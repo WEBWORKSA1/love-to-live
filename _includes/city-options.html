@@ -1,0 +1,1 @@
+{% assign byname = site.data.cities | sort: "name" %}{% for c in byname %}<option value="{{ c.slug }}"{% if c.slug == include.sel %} selected{% endif %}>{{ c.name }}, {{ c.country }}</option>{% endfor %}

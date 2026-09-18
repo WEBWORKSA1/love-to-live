@@ -1,0 +1,11 @@
+<section class="card" style="border:2px solid var(--love);box-shadow:var(--shadow)">
+  <span class="eyebrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19.5 12.6 12 20l-7.5-7.4A5 5 0 1 1 12 6a5 5 0 1 1 7.5 6.6z"/></svg> Free service</span>
+  <h3 style="font-size:1.4rem">{{ include.title | default: "Moving soon? Get matched with vetted pros" | escape }}</h3>
+  <p class="muted small">{{ include.sub | default: "Free, no-obligation quotes from licensed movers, top local agents and lenders. Takes 60 seconds." | escape }}</p>
+  <form action="{{ page.root }}get-quotes.html" method="get" class="form-grid two" style="margin-top:12px">
+    <div class="field"><label for="lm-need-{{ include.slug | default: "x" }}">I need</label><select id="lm-need-{{ include.slug | default: "x" }}" name="need"><option value="movers">Moving quotes</option><option value="agent">A real-estate agent</option><option value="mortgage">Mortgage pre-approval</option><option value="international">International relocation</option><option value="consult">Relocation consult</option></select></div>
+    <div class="field"><label for="lm-to-{{ include.slug | default: "x" }}">Moving to</label><input id="lm-to-{{ include.slug | default: "x" }}" type="text" name="to" value="{{ include.city | escape }}" placeholder="City"></div>
+    <button class="btn btn-primary btn-block full" type="submit">Get my free quotes →</button>
+  </form>
+  <p class="form-note" style="margin-top:10px">🔒 Your info is only shared with the partners you choose.</p>
+</section>

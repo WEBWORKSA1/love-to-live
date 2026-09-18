@@ -1,0 +1,16 @@
+{
+  "name": "LoveToLive — Find where you'll love to live",
+  "short_name": "LoveToLive",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#fbf8f4",
+  "theme_color": "#e2475a",
+  "icons": [
+    {
+      "src": "assets/img/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}
